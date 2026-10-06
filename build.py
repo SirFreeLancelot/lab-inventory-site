@@ -35,9 +35,9 @@ table{border-collapse:collapse;width:100%;margin:.5rem 0 1.5rem}th,td{text-align
 th{cursor:pointer;background:#eef4f3}input{font:inherit;padding:.4rem;width:100%;max-width:24rem;margin:.5rem 0}
 details{margin-left:1rem}summary{cursor:pointer;padding:.1rem 0}ul{margin:.2rem 0 .2rem 1rem;padding-left:1rem}
 .n{color:#666;font-size:.9rem}img{max-width:20rem;border-radius:4px}
-.cl{columns:3;column-gap:1.2rem;font-size:8pt;line-height:1.25}.cl section{break-inside:avoid;margin-bottom:.5rem}.cl section.long{break-inside:auto}.cl .r{break-inside:avoid}
-.cl h3{font-size:9pt;margin:0 0 .1rem;border-bottom:1px solid #000;break-after:avoid}.cl .r{display:flex;justify-content:space-between;gap:.4rem}.cl .r>span:first-child{flex:1 1 auto;min-width:0}
-.cl .b{font-size:9pt;letter-spacing:0;text-align:right;flex:0 0 auto;max-width:60%}.cl .c{color:#555}
+.cl{columns:3;column-gap:1.2rem;font-size:8.5pt;line-height:1.25}.cl section{break-inside:avoid;margin-bottom:.5rem}.cl section.long{break-inside:auto}.cl .r{break-inside:avoid}
+.cl h3{font-size:9.5pt;margin:0 0 .1rem;border-bottom:1px solid #000;break-after:avoid}.cl .r{display:flex;justify-content:space-between;gap:.4rem}.cl .r>span:first-child{flex:1 1 auto;min-width:0}
+.cl .b{font-size:9.5pt;letter-spacing:0;text-align:right;flex:0 0 auto;max-width:60%}.cl .c{color:#555}
 @media print{@page{size:A4;margin:8mm}nav,.noprint{display:none}main{max-width:none;padding:0}h1{font-size:12pt;margin:0 0 .3rem}}
 @media(max-width:700px){.cl{columns:1}}"""
 JS = """document.querySelectorAll('th').forEach(h=>h.onclick=()=>{const t=h.closest('table'),i=h.cellIndex,b=t.tBodies[0],
