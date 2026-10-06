@@ -1,0 +1,21 @@
+location_id,name,parent_id
+research-lab,Research Lab,
+outer-room,Outer Room,research-lab
+desktop-pc,Desktop PC,outer-room
+inner-room,Inner Room,research-lab
+cabinet-1,Cabinet 1,inner-room
+cabinet-2,Cabinet 2,inner-room
+cabinet-3,Cabinet 3,inner-room
+cabinet-4,Cabinet 4,inner-room
+cabinet-5,Cabinet 5,inner-room
+cabinet-6,Cabinet 6,inner-room
+cabinet-7,Cabinet 7,inner-room
+cabinet-8,Cabinet 8,inner-room
+cabinet-9,Cabinet 9,inner-room
+cabinet-10,Cabinet 10,inner-room
+department-store,Department Store,research-lab
+human-lab,Human Lab,research-lab
+hod-room,HoD Room,research-lab
+ad-instruments-box,AD Instruments box (to be divided into boxes),hod-room
+missing,Missing,research-lab
+missing-ad-instruments,Missing AD Instruments parts,missing

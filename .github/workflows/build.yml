@@ -1,0 +1,40 @@
+name: Build and deploy
+on:
+  workflow_dispatch:
+  schedule: [{cron: "0 2 * * *"}]
+  push: {branches: [main]}
+permissions: {contents: write, pages: write, id-token: write}
+concurrency: {group: pages, cancel-in-progress: true}
+env:
+  LOCATIONS_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZnvffqyOBzpQXT-NPYO3ZOW4gpBgH3evZjaPJnM91H1bWx3iLwR3DqW6A56jql4a3bcgl7ibjNFwl/pub?gid=1318021592&single=true&output=csv"
+  ITEMS_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZnvffqyOBzpQXT-NPYO3ZOW4gpBgH3evZjaPJnM91H1bWx3iLwR3DqW6A56jql4a3bcgl7ibjNFwl/pub?gid=870295037&single=true&output=csv"
+  STOCK_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZnvffqyOBzpQXT-NPYO3ZOW4gpBgH3evZjaPJnM91H1bWx3iLwR3DqW6A56jql4a3bcgl7ibjNFwl/pub?gid=817012556&single=true&output=csv"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download CSVs (fails loudly if a link is wrong)
+        run: |
+          mkdir -p data
+          for pair in "locations:location_id:$LOCATIONS_URL" "items:item_id:$ITEMS_URL" "stock:location_id:$STOCK_URL"; do
+            IFS=: read -r name header url <<< "${pair/:/:}"
+            name=${pair%%:*}; rest=${pair#*:}; header=${rest%%:*}; url=${rest#*:}
+            curl -fsSL "$url" -o "data/$name.tmp"
+            head -c 3 "data/$name.tmp" | grep -q $'\xef\xbb\xbf' && sed -i '1s/^\xEF\xBB\xBF//' "data/$name.tmp"
+            head -1 "data/$name.tmp" | grep -q "^$header" || { echo "::error::$name.csv does not look right (wrong link or tab?)"; exit 1; }
+            mv "data/$name.tmp" "data/$name.csv"
+          done
+      - run: python3 build.py
+      - name: Keep a backup copy of the CSVs in the repo
+        run: |
+          git config user.name "inventory-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data && (git diff --cached --quiet || (git commit -m "Update data [skip ci]" && git push))
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: site}
+      - id: deploy
+        uses: actions/deploy-pages@v4
