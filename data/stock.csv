@@ -104,13 +104,7 @@ ad-instruments-box,mlac25-bnc-to-bnc-cable,2
 ad-instruments-box,stimulating-electrode,1
 ad-instruments-box,usb-cable,1
 ad-instruments-box,manuals-and-info-cards,1
-missing,polygraph,1
-missing,phakoscope,1
-missing,hand-grip-dynamometer,2
-missing,water-distillation-unit-steel,1
-missing,spare-heating-elements-for-water-distillation-unit,1
-missing,oxygen-cylinder,1
-missing-ad-instruments,mla1029-face-mask-kit-adult-small-and-medium-mask,1
-missing-ad-instruments,ml206-gas-analyzer,1
-missing-ad-instruments,sp0180-polar-transmitter-with-chest-straps,1
-missing-ad-instruments,mlac35-st-polar-receiver-interface-cable-3m,1
+inner-room,phakoscope,1
+inner-room,hand-grip-dynamometer,2
+human-lab,water-distillation-unit-steel,1
+human-lab,spare-heating-elements-for-water-distillation-unit,1
