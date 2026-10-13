@@ -8,9 +8,6 @@ inner-room,finger-plethysmography-digital,5
 inner-room,three-channel-physiograph-with-tft-display,2
 inner-room,cardiorespiratory-student-with-ecg,1
 inner-room,ecg-electrodes-with-treadmill-controller,1
-inner-room,cpu-cabinet,1
-inner-room,monitor,2
-inner-room,keyboard,1
 inner-room,passive-avoidance-response-test-apparatus,1
 cabinet-1,weighing-scale,1
 cabinet-1,venous-pressure-apparatus,2
@@ -104,7 +101,6 @@ ad-instruments-box,mlac25-bnc-to-bnc-cable,2
 ad-instruments-box,stimulating-electrode,1
 ad-instruments-box,usb-cable,1
 ad-instruments-box,manuals-and-info-cards,1
-inner-room,phakoscope,1
 inner-room,hand-grip-dynamometer,2
-human-lab,water-distillation-unit-steel,1
-human-lab,spare-heating-elements-for-water-distillation-unit,1
+clinical-lab,water-distillation-unit-steel,1
+clinical-lab,spare-heating-elements-for-water-distillation-unit,1
