@@ -16,6 +16,4 @@ cabinet-10,Cabinet 10,inner-room
 department-store,Department Store,research-lab
 human-lab,Human Lab,research-lab
 hod-room,HoD Room,research-lab
-ad-instruments-box,AD Instruments box (to be divided into boxes),hod-room
-missing,Missing,research-lab
-missing-ad-instruments,Missing AD Instruments parts,missing
+ad-instruments-box,AD Instruments boxes,hod-room
